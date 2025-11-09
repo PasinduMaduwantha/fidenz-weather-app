@@ -6,25 +6,6 @@ A modern full-stack Weather Application built with TypeScript, React (Vite), and
 
 1. Project Setup
 
-If you’ve already executed the setup script:
-
-bash setup-weather-app.sh
-
-The script automatically generates the following structure:
-
-weather-app/
-├── backend/
-│ ├── src/
-│ ├── package.json
-│ └── tsconfig.json
-├── frontend/
-│ ├── src/
-│ ├── package.json
-│ └── vite.config.ts
-└── README.md
-
-Otherwise, clone and enter the project manually:
-
 git clone <repository-url>
 cd weather-app
 
