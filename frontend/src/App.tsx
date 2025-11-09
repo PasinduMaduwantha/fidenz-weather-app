@@ -17,17 +17,20 @@ function App() {
   const { data: cities, isLoading: weatherLoading, error } = useWeatherData();
 
   const handleLogout = () => {
+    // Clear any user-specific data
+    setSelectedCity(null);
+
+    // Clear local/session storage (if you're using it)
+    localStorage.clear();
+    sessionStorage.clear();
+
+    // Logout from Auth0 (clears Auth0 session + tokens)
     logout({
       logoutParams: {
         returnTo: window.location.origin,
       },
     });
   };
-
-  console.log("Auth0 domain:", import.meta.env.VITE_AUTH0_DOMAIN);
-  console.log("Audience:", import.meta.env.VITE_AUTH0_AUDIENCE);
-  console.log("API URL:", import.meta.env.VITE_API_URL);
-
   if (isLoading) {
     return <LoadingSpinner fullScreen />;
   }
